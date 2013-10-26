@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bell Quiz</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/jquery.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Bell Quiz</h1>
+    <div class="users">
+    </div>
+    <script>
+        var socket = io.connect();
+
+        socket.on('updateUser', function (users) {
+            User.users = users.users;
+            User.render();
+        });
+
+        socket.on('updateBulb', function (data) {
+            $('#bulb_'+data.user).attr('class', data.status);
+        });
+
+        socket.on('connect', function () {
+            // socket.emit('addUser', prompt("Siapa Nama Anda?"));
+        });
+
+        var User = {
+            users: {},
+            render: function() {
+                var $users = $('.users');
+                $users.html("");
+                for (var k in this.users) {
+                    $users.append('<div class="bulb_off" id="bulb_'+this.users[k]+'"><span class="nama">'+this.users[k]+'</span></div>');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
