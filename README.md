@@ -5,8 +5,6 @@ Bell quiz is a simple bell simulation that is usually used on a quiz to decide w
 
 ![](http://img36.imageshack.us/img36/7157/jzd.png)
 
-![](http://imageshack.us/a/img401/6418/kwk7.png)
-
 ## Installation
 
 - clone or download the tarball of this project
