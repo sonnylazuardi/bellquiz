@@ -14,8 +14,12 @@ Bell quiz is a simple bell simulation that is usually used on a quiz to decide w
 
         npm install
         node app
-- open your browser and see
+- open your browser and have fun
         
+        For showing all the participant 
+        htttp://localhost:3000/show.html
+
+        Add new participant to join the quiz
         htttp://localhost:3000/
 
 ## License
